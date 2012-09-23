@@ -21,9 +21,13 @@ module.exports = exports = function events(schema, options) {
       model.emit('change', this);
 
       var self = this;
+      var eventKeys = {};
       _.each(this._changed, function(attribute) {
         var key = 'change:' + attribute;
-        model.emit(key, self);
+        if (typeof eventKeys[key] === 'undefined') {
+          model.emit(key, self);
+          eventKeys[key] = key;
+        }
       });
       delete this._changed;
     }
