@@ -1,6 +1,6 @@
 {
   "name": "mongoose-eventify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Mongoose plugin adding add, remove, and change events for attributes on Model class",
   "main": "index.js",
   "dependencies": {
